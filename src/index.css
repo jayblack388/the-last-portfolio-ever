@@ -1,27 +1,77 @@
-/* :root {
-  font-family: "BioRhyme", system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+:root {
+  /* VARIABLES */
+
+  /* COLORS */
+  --black-1: #000000;
+  --black-2: #24292e;
+  --black-3: #2f363d;
+  --blue: #08aeea;
+  --green: #2af598;
+  --white-1: #ffffff;
+  --white-2: #fafafa;
+  --white-3: #fff8f8;
+
+  /* ELEVATIONS */
+  --elevation-inner-1: inset 0px 2.5px 5px rgba(0, 0, 0, 0.125);
+  --elevation-inner-2: inset 0px 5px 10px rgba(0, 0, 0, 0.1);
+  --elevation-inner-3: inset 0px 10px 15px rgba(0, 0, 0, 0.125);
+  --elevation-flat-1: unset;
+  --elevation-flat-2: 0px 1.25px 2.5px rgba(0, 0, 0, 0.15);
+  --elevation-flat-3: 0px 2.5px 5px rgba(0, 0, 0, 0.125);
+  --elevation-outer-1: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  --elevation-outer-2: 0px 10px 15px rgba(0, 0, 0, 0.125);
+  --elevation-outer-3: 0px 15px 20px rgba(0, 0, 0, 0.15);
+
+  /* UI */
+  --card-bg: var(--black-2);
+  --card-shadow: var(--elevation-outer-2);
+  --card-text: var(--white-1);
+  --content-bg: var(--white-3);
+  --masthead-bg: var(--white-2);
+  --general-text: var(--black-1);
+  --primary: var(--green);
+  --secondary: var(--blue);
+  --linear-bg: -webkit-linear-gradient(
+    0deg,
+    var(--primary) 0%,
+    var(--secondary) 100%
+  );
+  --linear-reverse-bg: -webkit-linear-gradient(
+    0deg,
+    var(--secondary) 0%,
+    var(--primary) 100%
+  );
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--black-2);
+  background-color: var(--white-2);
 
-  font-synthesis: none;
+  /* font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
+}
+
+html {
+  font-size: 16px;
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  background-clip: text;
+  background-image: var(--linear-bg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-image ease-in-out;
 }
+/*
+TODO: Add hover styling
 a:hover {
-  color: #535bf2;
-}
-
+  background-clip: text;
+  background-image: var(--linear-reverse-bg);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+} */
+/*
 body {
   margin: 0;
   display: flex;
