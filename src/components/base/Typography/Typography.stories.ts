@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { TYPOGRAPHY_COMPONENTS_MAP, Typography } from "./index";
+import { TYPOGRAPHY_COMPONENTS_MAP } from "./constants";
+import { Typography } from "./index";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

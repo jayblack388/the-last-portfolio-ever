@@ -1,34 +1,22 @@
 import { type IconProps } from "./types";
-
-import { Commits } from "./Commits";
-import { Location } from "./Location";
-import { Mail } from "./Mail";
-import { Moon } from "./Moon";
-import { Octocat } from "./Octocat";
-import { People } from "./People";
-import { Star } from "./Star";
-import { Sun } from "./Sun";
-import { World } from "./World";
-
-export const ICONOGRAPHY_COMPONENTS_MAP = {
-  commits: Commits,
-  location: Location,
-  mail: Mail,
-  moon: Moon,
-  octocat: Octocat,
-  people: People,
-  star: Star,
-  sun: Sun,
-  world: World,
-};
+import { ICONOGRAPHY_COMPONENTS_MAP } from "./constants";
 
 type IconographyProps = {
   variant: keyof typeof ICONOGRAPHY_COMPONENTS_MAP;
 } & IconProps;
 
-export const Iconography = ({ variant, ...rest }: IconographyProps) => {
+export const Iconography = (props: IconographyProps) => {
+  const {
+    variant,
+    fill = "var(--general-text)",
+    height = 24,
+    width = 24,
+    ...rest
+  } = props;
   const IconographyComponent = ICONOGRAPHY_COMPONENTS_MAP[variant];
-  return <IconographyComponent {...rest} />;
+  return (
+    <IconographyComponent fill={fill} height={height} width={width} {...rest} />
+  );
 };
 
 export default Iconography;
