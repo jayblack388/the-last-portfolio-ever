@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ICONOGRAPHY_COMPONENTS_MAP, Iconography } from "./index";
+import { ICONOGRAPHY_COMPONENTS_MAP } from "./constants";
+import { Iconography } from "./index";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
 
 const sharedStyles = css`
+  background: inherit;
+  color: inherit;
   font-family: "BioRhyme Variable", serif;
 `;
 
