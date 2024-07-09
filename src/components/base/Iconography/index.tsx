@@ -1,9 +1,5 @@
-import { type IconProps } from "./types";
+import type { IconographyProps } from "../../types";
 import { ICONOGRAPHY_COMPONENTS_MAP } from "./constants";
-
-type IconographyProps = {
-  variant: keyof typeof ICONOGRAPHY_COMPONENTS_MAP;
-} & IconProps;
 
 export const Iconography = (props: IconographyProps) => {
   const {
