@@ -8,57 +8,78 @@
   --blue: #08aeea;
   --green: #2af598;
   --white-1: #ffffff;
-  --white-2: #fafafa;
+  --white-2: rgb(241, 248, 255);
   --white-3: #fff8f8;
-
-  /* ELEVATIONS */
-  --elevation-inner-1: inset 0px 2.5px 5px rgba(0, 0, 0, 0.125);
-  --elevation-inner-2: inset 0px 5px 10px rgba(0, 0, 0, 0.1);
-  --elevation-inner-3: inset 0px 10px 15px rgba(0, 0, 0, 0.125);
-  --elevation-flat-1: unset;
-  --elevation-flat-2: 0px 1.25px 2.5px rgba(0, 0, 0, 0.15);
-  --elevation-flat-3: 0px 2.5px 5px rgba(0, 0, 0, 0.125);
-  --elevation-outer-1: 0px 5px 10px rgba(0, 0, 0, 0.1);
-  --elevation-outer-2: 0px 10px 15px rgba(0, 0, 0, 0.125);
-  --elevation-outer-3: 0px 15px 20px rgba(0, 0, 0, 0.15);
-
-  /* UI */
-  --card-bg: var(--black-2);
-  --card-shadow: var(--elevation-outer-2);
-  --card-text: var(--white-1);
-  --content-bg: var(--white-3);
-  --masthead-bg: var(--white-2);
-  --general-text: var(--black-1);
-  --primary: var(--green);
-  --secondary: var(--blue);
-  --linear-bg: -webkit-linear-gradient(
+  --primary-to-secondary: -webkit-linear-gradient(
     0deg,
     var(--primary) 0%,
     var(--secondary) 100%
   );
-  --linear-reverse-bg: -webkit-linear-gradient(
-    0deg,
-    var(--secondary) 0%,
-    var(--primary) 100%
-  );
+  --shadow-color-1: rgba(0, 0, 0, 0.1);
+  --shadow-color-2: rgba(0, 0, 0, 0.125);
+  --shadow-color-3: rgba(0, 0, 0, 0.15);
+
+  /* ELEVATIONS */
+  --elevation-inner-1: inset 0px 2.5px 5px var(--shadow-color-2);
+  --elevation-inner-2: inset 0px 5px 10px var(--shadow-color-1);
+  --elevation-inner-3: inset 0px 10px 15px var(--shadow-color-2);
+  --elevation-flat-1: unset;
+  --elevation-flat-2: 0px 1.25px 2.5px var(--shadow-color-3);
+  --elevation-flat-3: 0px 2.5px 5px var(--shadow-color-2);
+  --elevation-outer-1: 0px 5px 10px var(--shadow-color-1);
+  --elevation-outer-2: 0px 10px 15px var(--shadow-color-2);
+  --elevation-outer-3: 0px 15px 20px var(--shadow-color-3);
+
+  /* UI */
+  --card-bg: var(--white-2);
+  --card-shadow: var(--elevation-outer-2);
+  --content-bg: var(--white-3);
+  --masthead-bg: var(--white-2);
+  --general-text: var(--black-1);
+  --primary: var(--blue);
+  --secondary: var(--green);
+  --link-bg: var(--primary-to-secondary);
 
   color-scheme: light dark;
   color: var(--black-2);
   background-color: var(--white-2);
+}
 
-  /* font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* UI */
+    --card-bg: var(--black-3);
+    --card-shadow: var(--elevation-inner-2);
+    --card-text: var(--white-3);
+    --content-bg: var(--black-1);
+    --masthead-bg: var(--black-3);
+    --general-text: var(--white-1);
+    --primary: var(--green);
+    --secondary: var(--blue);
+    --shadow-color-2: rgba(255, 255, 255, 0.1);
+
+    color: var(--white-2);
+    background-color: var(--black-1);
+  }
 }
 
 html {
   font-size: 16px;
 }
 
+body {
+  margin: 0;
+}
+
+body,
+#root,
+main {
+  height: 100dvh;
+}
+
 a {
   background-clip: text;
-  background-image: var(--linear-bg);
+  background-image: var(--link-bg);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: background-image ease-in-out;
@@ -102,18 +123,5 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
  */
