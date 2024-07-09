@@ -1,0 +1,27 @@
+[
+  {
+    "name": "React",
+    "href": "https://reactjs.org/",
+    "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/React.svg"
+  },
+  {
+    "name": "graphQl",
+    "href": "https://graphql.org/",
+    "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/GraphQL.svg"
+  },
+  {
+    "name": "Node.js",
+    "href": "https://nodejs.org/",
+    "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/Node.svg"
+  },
+  {
+    "name": "Typescript",
+    "href": "https://www.typescriptlang.org/",
+    "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/Typescript.svg"
+  },
+  {
+    "name": "Ruby on Rails",
+    "href": "https://rubyonrails.org/",
+    "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/Rails.svg"
+  }
+]

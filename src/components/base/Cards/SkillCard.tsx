@@ -1,20 +1,17 @@
+import { Skill } from "../../types";
 import Typography from "../Typography";
-import FlexibleCardBase from "./FlexibleCardBase";
-
-export type SkillCardProps = {
-  src?: string;
-  title: string;
-};
+import { SkillCardBase, Image } from "./styled-components";
 
 export const SkillCard = ({
+  href,
+  name,
   src = "https://via.placeholder.com/150",
-  title,
-}: SkillCardProps) => {
+}: Skill) => {
   return (
-    <FlexibleCardBase style={{ textAlign: "center" }}>
-      <img loading="lazy" src={src} alt={`Logo for ${title}`} />
-      <Typography variant="content">{title}</Typography>
-    </FlexibleCardBase>
+    <SkillCardBase>
+      <Image loading="lazy" src={src} alt={`Logo for ${name}`} />
+      <Typography variant="content">{name}</Typography>
+    </SkillCardBase>
   );
 };
 

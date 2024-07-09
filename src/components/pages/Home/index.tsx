@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import type { MastheadProps } from "../../types";
+import type { Article, MastheadProps, Repository, Skill } from "../../types";
+import Content from "../../features/Content";
 import { Masthead } from "../../features/Masthead";
 
 const Main = styled.main`
@@ -11,12 +12,18 @@ const Main = styled.main`
 `;
 
 type HomeProps = {
+  content: {
+    articles?: Article[];
+    repositories?: Repository[];
+    skills?: Skill[];
+  };
   masthead: MastheadProps;
 };
 
 export const Home = (props: HomeProps) => (
   <Main>
     <Masthead {...props.masthead} />
+    <Content {...props.content} />
   </Main>
 );
 
