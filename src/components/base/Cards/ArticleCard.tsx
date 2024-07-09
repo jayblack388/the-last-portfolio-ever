@@ -1,19 +1,10 @@
+import { Article } from "../../types";
 import Typography from "../Typography";
-import FlexibleCardBase from "./FlexibleCardBase";
+import { FlexibleCardBase } from "./styled-components";
 
-export type ArticleCardProps = {
-  href: string;
-  publicationDate: string;
-  title: string;
-};
-
-export const ArticleCard = ({
-  publicationDate,
-  title,
-  href,
-}: ArticleCardProps) => {
+export const ArticleCard = ({ publicationDate, title, href }: Article) => {
   return (
-    <FlexibleCardBase>
+    <FlexibleCardBase $hasTransform>
       <a href={href}>
         <Typography variant="content">{title}</Typography>
       </a>

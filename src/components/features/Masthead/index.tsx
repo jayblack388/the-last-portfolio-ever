@@ -52,8 +52,9 @@ export const Masthead = ({
     {organizations.map((org) => (
       <img
         alt={`${org.name} Organization`}
-        src={org.src}
         height={35}
+        src={org.src}
+        title={org.name}
         width={35}
       />
     ))}

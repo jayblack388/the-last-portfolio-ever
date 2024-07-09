@@ -14,6 +14,7 @@ export const Aside = styled.aside`
   background-color: var(--masthead-bg);
   border-right: 3px solid var(--primary);
   grid-area: masthead-area;
+  min-width: 18.125rem;
   padding: 2.5rem;
   img:has(+ img) {
     margin-right: 0.5rem;

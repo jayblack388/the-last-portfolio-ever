@@ -1,0 +1,34 @@
+[
+  {
+    "deployedUrl": "https://use-audio-demo.netlify.com",
+    "description": "React hooks for playing and recording audio",
+    "forks": 3,
+    "githubUrl": "https://github.com/jayblack388/use-audio-hooks",
+    "name": "use-audio-hooks",
+    "stars": 18
+  },
+  {
+    "deployedUrl": "https://gradient-string-generator.netlify.app/",
+    "description": "Gradient Generator function using d3 scale linear",
+    "forks": 1,
+    "githubUrl": "https://github.com/jayblack388/gradient-generator",
+    "name": "gradient-generator",
+    "stars": 1
+  },
+  {
+    "deployedUrl": "https://quizzical-keller-60a7b5.netlify.com/",
+    "description": "Simple Marketing page layout with several animations written with react-spring",
+    "forks": 0,
+    "githubUrl": "https://github.com/jayblack388/animations",
+    "name": "animations",
+    "stars": 2
+  },
+  {
+    "deployedUrl": "https://johnblackwell.dev",
+    "description": "Hey look at that, I'm making another portfolio!",
+    "forks": 0,
+    "githubUrl": "https://github.com/jayblack388/the-last-portfolio-ever",
+    "name": "the-last-portfolio-ever",
+    "stars": 1
+  }
+]

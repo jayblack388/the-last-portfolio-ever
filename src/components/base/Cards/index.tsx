@@ -1,12 +1,8 @@
-import type { ArticleCardProps } from "./ArticleCard";
+import { Article, Skill } from "../../types";
 import type { RepositoryCardProps } from "./RepositoryCard";
-import type { SkillCardProps } from "./SkillCard";
 import { CARD_COMPONENTS_MAP } from "./constants";
 
-type PossibleCardProps =
-  | ArticleCardProps
-  | RepositoryCardProps
-  | SkillCardProps;
+type PossibleCardProps = Article | RepositoryCardProps | Skill;
 
 type CardProps = {
   variant: keyof typeof CARD_COMPONENTS_MAP;
