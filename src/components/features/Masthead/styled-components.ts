@@ -44,9 +44,9 @@ export const Bio = styled(Typography)`
   padding: 1rem 0;
 `;
 
-export const Button = styled.a<{ primary?: boolean }>`
-  background: ${({ primary }) =>
-    primary ? "var(--primary)" : "var(--secondary)"};
+export const Button = styled.a<{ $primary?: boolean }>`
+  background: ${({ $primary }) =>
+    $primary ? "var(--primary)" : "var(--secondary)"};
   border: 0;
   border-radius: 1rem;
   color: var(--general-text);
