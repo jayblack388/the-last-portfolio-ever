@@ -17,7 +17,7 @@ export const Content = ({
   <Section>
     <Typography variant="h2">My Interests</Typography>
     <Typography variant="content">
-      Some technologies I've worked with
+      Some technologies I've been working with
     </Typography>
     <Grid $maxWidth="12.75rem">
       {skills.slice(0, 6).map((skill) => (
