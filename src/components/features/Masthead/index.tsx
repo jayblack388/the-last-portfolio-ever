@@ -17,7 +17,7 @@ export const Masthead = ({
   <Aside>
     <Avatar src="/avatar.png" />
     <Typography variant="h1">{name}</Typography>
-    <Actions align="center" justify="space-between">
+    <Actions $align="center" $justify="space-between">
       <Badge
         href={`https://github.com/${githubUsername}`}
         iconVariant="octocat"
@@ -55,6 +55,7 @@ export const Masthead = ({
       <img
         alt={`${org.name} Organization`}
         height={35}
+        key={org.name}
         src={org.src}
         title={org.name}
         width={35}

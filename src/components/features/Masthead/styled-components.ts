@@ -3,11 +3,11 @@ import styled from "styled-components";
 import { flex } from "../../base/styles";
 import Typography from "../../base/Typography";
 
-export const Actions = styled.div<{ align?: string; justify?: string }>`
+export const Actions = styled.div<{ $align?: string; $justify?: string }>`
   ${flex}
-  align-items: ${({ align }) => align || "center"};
+  align-items: ${({ $align }) => $align || "center"};
   gap: 1.25rem;
-  justify-content: ${({ justify }) => justify || "unset"};
+  justify-content: ${({ $justify }) => $justify || "unset"};
 `;
 
 export const Aside = styled.aside`

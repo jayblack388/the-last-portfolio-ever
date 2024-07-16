@@ -1,4 +1,4 @@
-import { type IconProps } from "./types";
+import { type IconProps } from "../../types";
 
 export const Mail = ({ height, width, fill }: IconProps) => (
   <svg

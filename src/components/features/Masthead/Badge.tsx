@@ -1,5 +1,5 @@
 import Iconography from "../../base/Iconography";
-import { IconographyVariant } from "../../base/Iconography/types";
+import { IconographyVariant } from "../../types";
 import Typography from "../../base/Typography";
 import { BadgeWrapper } from "./styled-components";
 

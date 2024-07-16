@@ -1,5 +1,6 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
-import { flex, flexCol } from "../styles";
+import { flex } from "../styles";
 
 export const CardFooter = styled.footer`
   ${flex}
@@ -22,30 +23,12 @@ export const CardStat = styled.span`
   }
 `;
 
-export const FlexibleCardBase = styled.article<{ $hasTransform?: boolean }>`
+export const StyledFlexibleCardBase = styled.article`
   background: var(--card-bg);
   box-shadow: var(--card-shadow);
   color: var(--general-text);
   padding: 1rem;
   transition: transform ease-in-out 0.2s;
-  &:hover {
-    transform: ${({ $hasTransform }) =>
-      $hasTransform ? "scale(1.02)" : "unset"};
-  }
 `;
 
-export const SkillCardBase = styled(FlexibleCardBase)`
-  ${flexCol}
-  align-items: center;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  gap: 0.75rem;
-  justify-content: center;
-  p {
-    margin: 0;
-  }
-`;
-
-export const Image = styled.img`
-  height: 8rem;
-`;
+export const FlexibleCardBase = motion(StyledFlexibleCardBase);

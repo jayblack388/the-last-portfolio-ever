@@ -1,4 +1,4 @@
-import type { Repository } from "../../types";
+import type { RepositoryCardProps } from "../../types";
 import Typography from "../Typography";
 import {
   CardFooter,
@@ -7,20 +7,21 @@ import {
   FlexibleCardBase,
 } from "./styled-components";
 import Iconography from "../Iconography";
-
-export type RepositoryCardProps = {
-  repository: Repository;
-  githubUserName: string;
-};
+import { CARD_VARIANTS } from "./constants";
 
 const iconProps = { fill: "var(--general-text)", height: 14, width: 14 };
 
 export const RepositoryCard = ({
-  repository: { deployedUrl, description, forks, githubUrl, name, stars },
+  deployedUrl,
+  description,
+  forks,
+  githubUrl,
   githubUserName,
+  name,
+  stars,
 }: RepositoryCardProps) => {
   return (
-    <FlexibleCardBase $hasTransform>
+    <FlexibleCardBase whileHover="hover" variants={CARD_VARIANTS}>
       <CardHeader>
         <a href={githubUrl}>
           <Typography variant="content">{githubUserName}/</Typography>
