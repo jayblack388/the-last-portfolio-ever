@@ -1,6 +1,4 @@
-import { useState } from "react";
-
-import { Button, Container, Cover } from "./styled-components";
+import { Container, Cover } from "./styled-components";
 import Sun from "../../base/Iconography/Sun";
 import Moon from "../../base/Iconography/Moon";
 import { useMediaQuery } from "../../../hooks/useMediaQuery";
