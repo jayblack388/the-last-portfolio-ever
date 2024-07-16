@@ -1,4 +1,4 @@
-import { type IconProps } from "./types";
+import { type IconProps } from "../../types";
 
 export const Sun = ({ height, width, fill = "#FFCE31" }: IconProps) => (
   <svg

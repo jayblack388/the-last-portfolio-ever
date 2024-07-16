@@ -5,8 +5,8 @@ export type Article = {
 };
 
 export type Organization = {
-  name: "string";
-  src: "string";
+  name: string;
+  src: string;
 };
 
 export type Repository = {
@@ -22,5 +22,7 @@ export type Skill = {
   href: string;
   name: string;
   src: string;
-  subSkills: Skill[];
+  subSkills: SkillWithoutSubSkills[];
 };
+
+export type SkillWithoutSubSkills = Omit<Skill, "subSkills">;

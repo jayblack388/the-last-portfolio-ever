@@ -1,5 +1,5 @@
 import { ICONOGRAPHY_COMPONENTS_MAP } from "../base/Iconography/constants";
-import { Organization } from "./entities";
+import { Article, Organization, Repository, Skill } from "./entities";
 
 export type IconProps = {
   height?: number;
@@ -23,3 +23,27 @@ export type MastheadProps = {
   organizations?: Organization[];
   websiteUrl: string;
 };
+
+export type CardVariant = "article" | "repo" | "skill";
+
+export type BaseCardProps = {
+  variant: CardVariant;
+};
+
+export type ArticleCardProps = {
+  variant: "article";
+} & Article;
+
+export type RepositoryCardProps = {
+  variant: "repo";
+  githubUserName?: string;
+} & Repository;
+
+export type SkillCardProps = {
+  variant: "skill";
+} & Skill;
+
+export type CardMetadataUnion =
+  | ArticleCardProps
+  | RepositoryCardProps
+  | SkillCardProps;

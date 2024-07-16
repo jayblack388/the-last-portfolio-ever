@@ -33,8 +33,8 @@ export const Content = ({
         <Card
           githubUserName="jayblack388"
           key={repository.name}
-          repository={repository}
           variant="repo"
+          {...repository}
         />
       ))}
     </Grid>

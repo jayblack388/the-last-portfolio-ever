@@ -1,5 +1,5 @@
-import { AnimatePresence, delay } from "framer-motion";
-import { Skill } from "../../../types";
+import { AnimatePresence } from "framer-motion";
+import type { SkillCardProps, SkillWithoutSubSkills } from "../../../types";
 import Typography from "../../Typography";
 import {
   Image,
@@ -41,7 +41,7 @@ const subSkillVariants = {
   },
 };
 
-const CardInner = ({ name, src }: Partial<Skill>) => {
+const CardInner = ({ name, src }: SkillWithoutSubSkills) => {
   const [loaded, setLoaded] = useState(false);
   return (
     <>
@@ -60,13 +60,14 @@ const CardInner = ({ name, src }: Partial<Skill>) => {
 const SubSkillCard = ({
   angleStep,
   height,
+  href,
   index,
   name,
   radius,
   rotationAngle,
   src,
   width,
-}: Skill & SubSkillVariantCustomProps) => (
+}: SkillWithoutSubSkills & SubSkillVariantCustomProps) => (
   <MotionSubSkillCard
     variants={subSkillVariants}
     custom={{ angleStep, height, index, radius, rotationAngle, width }}
@@ -75,12 +76,12 @@ const SubSkillCard = ({
     animate="show"
     exit="hide"
   >
-    <CardInner name={name} src={src} />
+    <CardInner href={href} name={name} src={src} />
   </MotionSubSkillCard>
 );
 
-export const SkillCard = (skill: Skill) => {
-  const { name, src, subSkills = [] } = skill;
+export const SkillCard = (skill: SkillCardProps) => {
+  const { href, name, src, subSkills = [] } = skill;
   const {
     angleStep,
     height,
@@ -115,7 +116,7 @@ export const SkillCard = (skill: Skill) => {
             />
           ))}
       </AnimatePresence>
-      <CardInner name={name} src={src} />
+      <CardInner href={href} name={name} src={src} />
     </MotionSkillCard>
   );
 };

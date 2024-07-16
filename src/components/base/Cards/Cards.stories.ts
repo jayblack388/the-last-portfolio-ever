@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import data from "../../../data/skills.json";
-import { CARD_COMPONENTS_MAP } from "./constants";
 import Card from "./index.tsx";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -14,7 +13,7 @@ const meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
   argTypes: {
-    variant: CARD_COMPONENTS_MAP,
+    variant: ["article", "repo", "skill"],
   },
 } satisfies Meta<typeof Card>;
 
@@ -33,14 +32,12 @@ export const ArticleCard: Story = {
 export const RepositoryCard: Story = {
   args: {
     githubUserName: "jayblack388",
-    repository: {
-      deployedUrl: "",
-      description: "Some serious hipster ipsum content should go here.",
-      forks: 10,
-      githubUrl: "",
-      name: "the-last-portfolio-ever",
-      stars: 40,
-    },
+    deployedUrl: "",
+    description: "Some serious hipster ipsum content should go here.",
+    forks: 10,
+    githubUrl: "",
+    name: "the-last-portfolio-ever",
+    stars: 40,
     variant: "repo",
   },
 };
