@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import data from "../../../data/skills.json";
 import { CARD_COMPONENTS_MAP } from "./constants";
 import Card from "./index.tsx";
 
@@ -45,8 +46,7 @@ export const RepositoryCard: Story = {
 };
 export const SkillCard: Story = {
   args: {
-    title: "Some serious hipster ipsum content should go here.",
-    src: "https://via.placeholder.com/150",
+    ...data[0],
     variant: "skill",
   },
 };

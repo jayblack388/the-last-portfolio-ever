@@ -22,4 +22,5 @@ export type Skill = {
   href: string;
   name: string;
   src: string;
+  subSkills: Skill[];
 };

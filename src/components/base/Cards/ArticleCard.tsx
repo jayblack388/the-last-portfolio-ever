@@ -1,10 +1,11 @@
 import { Article } from "../../types";
 import Typography from "../Typography";
+import { CARD_VARIANTS } from "./constants";
 import { FlexibleCardBase } from "./styled-components";
 
 export const ArticleCard = ({ publicationDate, title, href }: Article) => {
   return (
-    <FlexibleCardBase $hasTransform>
+    <FlexibleCardBase whileHover="hover" variants={CARD_VARIANTS}>
       <a href={href}>
         <Typography variant="content">{title}</Typography>
       </a>

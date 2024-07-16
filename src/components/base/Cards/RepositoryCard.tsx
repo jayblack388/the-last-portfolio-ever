@@ -7,6 +7,7 @@ import {
   FlexibleCardBase,
 } from "./styled-components";
 import Iconography from "../Iconography";
+import { CARD_VARIANTS } from "./constants";
 
 export type RepositoryCardProps = {
   repository: Repository;
@@ -20,7 +21,7 @@ export const RepositoryCard = ({
   githubUserName,
 }: RepositoryCardProps) => {
   return (
-    <FlexibleCardBase $hasTransform>
+    <FlexibleCardBase whileHover="hover" variants={CARD_VARIANTS}>
       <CardHeader>
         <a href={githubUrl}>
           <Typography variant="content">{githubUserName}/</Typography>

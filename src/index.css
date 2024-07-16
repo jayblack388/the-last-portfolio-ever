@@ -35,6 +35,7 @@
   --card-bg: var(--white-2);
   --card-shadow: var(--elevation-outer-2);
   --content-bg: var(--white-3);
+  --sub-card-bg: var(--white-1);
   --masthead-bg: var(--white-2);
   --general-text: var(--black-1);
   --primary: var(--blue);
@@ -49,6 +50,7 @@
     --card-bg: var(--black-3);
     --card-shadow: var(--elevation-inner-2);
     --card-text: var(--white-3);
+    --sub-card-bg: var(--black-2);
     --content-bg: var(--black-1);
     --masthead-bg: var(--black-3);
     --general-text: var(--white-1);

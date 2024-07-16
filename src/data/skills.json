@@ -1,27 +1,53 @@
 [
   {
-    "name": "React",
+    "name": "JavaScript",
     "href": "https://reactjs.org/",
-    "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/React.svg"
+    "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1720636451/Logos/JavaScript.png",
+    "subSkills": [
+      {
+        "name": "React",
+        "href": "https://reactjs.org/",
+        "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/React.svg"
+      },
+      {
+        "name": "Node.js",
+        "href": "https://nodejs.org/",
+        "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/Node.svg"
+      },
+      {
+        "name": "Typescript",
+        "href": "https://www.typescriptlang.org/",
+        "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/Typescript.svg"
+      },
+      {
+        "name": "Apollo GraphQL",
+        "href": "https://www.typescriptlang.org/",
+        "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1720719250/Apollo.svg"
+      }
+    ]
   },
   {
-    "name": "graphQl",
-    "href": "https://graphql.org/",
-    "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/GraphQL.svg"
+    "name": "Python",
+    "href": "https://www.python.org/",
+    "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1721097945/python.png",
+    "subSkills": [
+      {
+        "name": "Django",
+        "href": "https://www.djangoproject.com/",
+        "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1721098019/django.svg"
+      }
+    ]
   },
   {
-    "name": "Node.js",
-    "href": "https://nodejs.org/",
-    "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/Node.svg"
-  },
-  {
-    "name": "Typescript",
-    "href": "https://www.typescriptlang.org/",
-    "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/Typescript.svg"
-  },
-  {
-    "name": "Ruby on Rails",
-    "href": "https://rubyonrails.org/",
-    "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/Rails.svg"
+    "name": "Ruby",
+    "href": "https://www.ruby-lang.org/en/",
+    "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1721098129/ruby.png",
+    "subSkills": [
+      {
+        "name": "Ruby on Rails",
+        "href": "https://rubyonrails.org/",
+        "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/Rails.svg"
+      }
+    ]
   }
 ]
