@@ -1,5 +1,6 @@
 :root {
   /* VARIABLES */
+  --color-scheme: light;
 
   /* COLORS */
   --black-1: #000000;
@@ -40,13 +41,10 @@
   --secondary: var(--green);
   --link-bg: var(--primary-to-secondary);
 
-  color-scheme: light dark;
-  color: var(--black-2);
-  background-color: var(--white-2);
-}
+  color-scheme: var(--color-scheme);
 
-@media (prefers-color-scheme: dark) {
-  :root {
+  &:has(button[role="switch"][aria-checked="true"]) {
+    --color-scheme: dark;
     /* UI */
     --card-bg: var(--black-3);
     --card-shadow: var(--elevation-inner-2);
@@ -57,9 +55,22 @@
     --primary: var(--green);
     --secondary: var(--blue);
     --shadow-color-2: rgba(255, 255, 255, 0.1);
+  }
 
-    color: var(--white-2);
-    background-color: var(--black-1);
+  @media (prefers-color-scheme: dark) {
+    &:has(button[role="switch"][aria-checked="true"]) {
+      --color-scheme: dark;
+      /* UI */
+      --card-bg: var(--black-3);
+      --card-shadow: var(--elevation-inner-2);
+      --card-text: var(--white-3);
+      --content-bg: var(--black-1);
+      --masthead-bg: var(--black-3);
+      --general-text: var(--white-1);
+      --primary: var(--green);
+      --secondary: var(--blue);
+      --shadow-color-2: rgba(255, 255, 255, 0.1);
+    }
   }
 }
 

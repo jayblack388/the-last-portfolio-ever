@@ -2,6 +2,7 @@ import type { MastheadProps } from "../../types";
 import Typography from "../../base/Typography";
 import { Aside, Avatar, Actions, Bio, Button } from "./styled-components";
 import Badge from "./Badge";
+import Toggle from "../ThemeToggle";
 
 export const Masthead = ({
   company,
@@ -16,12 +17,13 @@ export const Masthead = ({
   <Aside>
     <Avatar src="/avatar.png" />
     <Typography variant="h1">{name}</Typography>
-    <Actions>
+    <Actions align="center" justify="space-between">
       <Badge
         href={`https://github.com/${githubUsername}`}
         iconVariant="octocat"
         label={githubUsername}
       />
+      <Toggle />
     </Actions>
     <Bio variant="masthead">{description}</Bio>
     <Badge iconVariant="people" label={company} />
@@ -36,7 +38,7 @@ export const Masthead = ({
       <Button
         href="/John Blackwell Resume.pdf"
         download="John Blackwell Resume"
-        primary
+        $primary
       >
         <Typography variant="masthead">Grab my resume</Typography>
       </Button>
