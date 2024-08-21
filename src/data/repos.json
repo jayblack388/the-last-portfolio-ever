@@ -1,6 +1,6 @@
 [
   {
-    "deployedUrl": "https://use-audio-demo.netlify.com",
+    "deployedUrl": "https://use-audio-demo.netlify.app",
     "description": "React hooks for playing and recording audio",
     "forks": 3,
     "githubUrl": "https://github.com/jayblack388/use-audio-hooks",
