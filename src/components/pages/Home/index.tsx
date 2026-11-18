@@ -9,6 +9,11 @@ const Main = styled.main`
   grid-template-columns: 1fr 3fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
+  @media (max-width: 48rem) {
+    grid-template-areas: "masthead-area" "content-area";
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+  }
 `;
 
 type HomeProps = {

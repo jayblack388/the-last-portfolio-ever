@@ -4,6 +4,9 @@ export const Section = styled.section`
   background-color: var(--content-bg);
   grid-area: content-area;
   padding: 3.75rem 2.5rem 2.5rem;
+  @media (max-width: 48rem) {
+    padding: 1.5rem 1.25rem;
+  }
 `;
 
 export const Grid = styled.div<{ $maxWidth?: string }>`
@@ -11,6 +14,6 @@ export const Grid = styled.div<{ $maxWidth?: string }>`
   gap: 1rem;
   grid-template-columns: repeat(
     auto-fill,
-    minmax(${({ $maxWidth }) => $maxWidth ?? "20rem"}, 1fr)
+    minmax(min(${({ $maxWidth }) => $maxWidth ?? "20rem"}, 100%), 1fr)
   );
 `;

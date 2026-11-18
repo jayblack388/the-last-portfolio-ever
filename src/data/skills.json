@@ -1,52 +1,52 @@
 [
   {
     "name": "JavaScript",
-    "href": "https://reactjs.org/",
-    "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1720636451/Logos/JavaScript.png",
+    "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    "src": "/logos/javascript.svg",
     "subSkills": [
       {
         "name": "React",
         "href": "https://reactjs.org/",
-        "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/React.svg"
+        "src": "/logos/react.svg"
       },
       {
         "name": "Node.js",
         "href": "https://nodejs.org/",
-        "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/Node.svg"
+        "src": "/logos/nodejs.svg"
       },
       {
         "name": "Typescript",
         "href": "https://www.typescriptlang.org/",
-        "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/Typescript.svg"
+        "src": "/logos/typescript.svg"
       },
       {
         "name": "Apollo GraphQL",
-        "href": "https://www.typescriptlang.org/",
-        "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1720719250/Apollo.svg"
+        "href": "https://www.apollographql.com/",
+        "src": "/logos/apollo.svg"
       }
     ]
   },
   {
     "name": "Python",
     "href": "https://www.python.org/",
-    "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1721097945/python.png",
+    "src": "/logos/python.svg",
     "subSkills": [
       {
         "name": "Django",
         "href": "https://www.djangoproject.com/",
-        "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1721098019/django.svg"
+        "src": "/logos/django.svg"
       }
     ]
   },
   {
     "name": "Ruby",
     "href": "https://www.ruby-lang.org/en/",
-    "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1721098129/ruby.png",
+    "src": "/logos/ruby.svg",
     "subSkills": [
       {
         "name": "Ruby on Rails",
         "href": "https://rubyonrails.org/",
-        "src": "https://res.cloudinary.com/dvjmyp3nz/image/upload/v1617744908/Logos/Rails.svg"
+        "src": "/logos/rails.svg"
       }
     ]
   }

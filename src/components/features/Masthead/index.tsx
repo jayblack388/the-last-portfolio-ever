@@ -15,7 +15,7 @@ export const Masthead = ({
   websiteUrl,
 }: MastheadProps) => (
   <Aside>
-    <Avatar src="/avatar.png" />
+    <Avatar src="/avatar.png" alt={`Photo of ${name}`} />
     <Typography variant="h1">{name}</Typography>
     <Actions $align="center" $justify="space-between">
       <Badge
@@ -43,9 +43,9 @@ export const Masthead = ({
         <Typography variant="masthead">Grab my resume</Typography>
       </Button>
       <Button
-        href={`mailto:${email}?subject=I heard you were open to work, we should connect!`}
+        href={`mailto:${email}?subject=Hello from johnblackwell.dev`}
       >
-        <Typography variant="masthead">Open to work</Typography>
+        <Typography variant="masthead">Get in touch</Typography>
       </Button>
     </Actions>
     {!!organizations.length && (
