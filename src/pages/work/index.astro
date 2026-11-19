@@ -1,0 +1,31 @@
+---
+import WorkCard from "../../components/WorkCard.astro";
+import Base from "../../layouts/Base.astro";
+import { getWork } from "../../lib/work";
+
+const work = await getWork();
+---
+
+<Base title="Work | John Blackwell" description="Projects and case studies by John Blackwell.">
+  <h1>Work</h1>
+  <p>Things I've built outside my day job, and what I learned building them.</p>
+  <ul class="grid" role="list">
+    {
+      work.map((entry) => (
+        <li>
+          <WorkCard entry={entry} />
+        </li>
+      ))
+    }
+  </ul>
+</Base>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(18rem, 100%), 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+  }
+</style>
