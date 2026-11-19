@@ -39,15 +39,17 @@ export default defineConfig({
   timeout: 60_000,
   reporter: [["list"]],
   use: {
-    baseURL: remote ?? "http://localhost:4321",
+    baseURL: remote ?? "http://127.0.0.1:4321",
     launchOptions: { env },
   },
   projects: projects.filter((p) => wanted.includes(p.name)),
   webServer: remote
     ? undefined
     : {
-        command: "npm run build && npm run preview",
-        url: "http://localhost:4321",
+        // A plain static server (scripts/serve-dist.mjs) instead of `astro preview`, which leaves
+        // a child process running after Playwright stops it.
+        command: "npx astro build && exec node scripts/serve-dist.mjs",
+        url: "http://127.0.0.1:4321",
         reuseExistingServer: false,
         timeout: 180_000,
       },
