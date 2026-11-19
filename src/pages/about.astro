@@ -1,0 +1,92 @@
+---
+import Contact from "../components/Contact.astro";
+import Base from "../layouts/Base.astro";
+import { site } from "../site";
+
+// Mirrors the "general" resume in the resume repo; update both together.
+const history = [
+  { org: "Hometap", role: "Senior Software Engineer (Lead)", dates: "2025 to now" },
+  { org: "O'Reilly Media", role: "Software Engineer, then Senior Software Engineer and Team Engineer Lead", dates: "2021 to 2025" },
+  { org: "PINS Advantage", role: "Contract Software Engineer", dates: "2022 to 2023" },
+  { org: "Q-Centrix", role: "Frontend Software Engineer", dates: "2020 to 2021" },
+  { org: "RTS Labs", role: "Software Engineer", dates: "2018 to 2019" },
+];
+const skills = [
+  { group: "Full stack", items: "TypeScript, Node.js, Python and Django, Ruby on Rails, REST and GraphQL APIs, PostgreSQL" },
+  { group: "Frontend", items: "React, state management (Redux, XState, Apollo), accessibility, Cypress, Playwright, Storybook, Jest" },
+  { group: "AI and LLMs", items: "Claude API, structured outputs, prompt design, Temporal workflows" },
+  { group: "Infrastructure", items: "Docker, Kubernetes, CI/CD, feature flags (LaunchDarkly), observability (Grafana)" },
+  { group: "Leadership", items: "Leading cross-functional teams, mentoring, technical planning, remote collaboration" },
+];
+---
+
+<Base title="About | John Blackwell" description={`${site.role} at ${site.employer}. Background, skills and contact.`}>
+  <h1>About</h1>
+  <p class="lead">
+    I'm a {site.role} at {site.employer}, working from {site.location}. I've been building for the web
+    since 2018, mostly in TypeScript, React and Node, with Python and Ruby on the back end.
+  </p>
+  <p>
+    I care about software that works for the people who are easiest to forget: people on old phones,
+    people using screen readers, people reading in their second language. I lead teams the same way: clear
+    plans, honest estimates, and code reviews that teach.
+  </p>
+
+  <h2>Experience</h2>
+  <ul class="history" role="list">
+    {
+      history.map((h) => (
+        <li>
+          <strong>{h.org}</strong>
+          <span>{h.role}</span>
+          <span class="dates">{h.dates}</span>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2>Skills</h2>
+  <dl class="skills">
+    {
+      skills.map((s) => (
+        <div>
+          <dt>{s.group}</dt>
+          <dd>{s.items}</dd>
+        </div>
+      ))
+    }
+  </dl>
+
+  <h2>Contact</h2>
+  <Contact />
+</Base>
+
+<style>
+  .lead {
+    font-size: 1.15rem;
+  }
+  .history {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+  .history li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.75rem;
+  }
+  .dates {
+    color: var(--muted);
+  }
+  .skills div {
+    margin-bottom: 0.75rem;
+  }
+  dt {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-weight: 700;
+  }
+  dd {
+    margin: 0;
+  }
+</style>

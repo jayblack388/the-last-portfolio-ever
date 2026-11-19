@@ -1,0 +1,25 @@
+---
+import { site } from "../site";
+---
+
+<ul class="contact" role="list">
+  <li><span class="label">Email</span> <a class="wrap-anywhere" href={`mailto:${site.email}`}>{site.email}</a></li>
+  <li><span class="label">LinkedIn</span> <a href={site.linkedin}>john-blackwell</a></li>
+  <li><span class="label">GitHub</span> <a href={site.github}>jayblack388</a></li>
+  <li><span class="label">Resume</span> <a href={site.resumePath}>Download my resume (PDF)</a></li>
+</ul>
+
+<style>
+  .contact {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+  .label {
+    display: inline-block;
+    min-width: 5.5rem;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-weight: 700;
+  }
+</style>

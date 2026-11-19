@@ -5,4 +5,6 @@ export const PAGES: string[] = [
   "/work/vscode-extensions",
   "/work/homelab",
   "/work/claude-plugins",
+  "/about",
+  "/nonprofits",
 ];
