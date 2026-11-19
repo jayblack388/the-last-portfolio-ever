@@ -1,5 +1,6 @@
 ---
 import { site } from "../site";
+import ThemeToggle from "./ThemeToggle.astro";
 
 const nav = [
   { href: "/work", label: "Work" },
@@ -26,7 +27,7 @@ const current = Astro.url.pathname;
         }
       </ul>
     </nav>
-    <slot />
+    <ThemeToggle />
   </div>
 </header>
 

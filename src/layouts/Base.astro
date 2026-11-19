@@ -26,6 +26,19 @@ const canonical = new URL(Astro.url.pathname, site.origin).href;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <script is:inline>
+      // Runs before paint so a stored theme never flashes the wrong colors.
+      // Same rule as resolveTheme() in src/scripts/theme.ts; keep the two in step.
+      (function () {
+        var stored = null;
+        try {
+          stored = localStorage.getItem("theme");
+        } catch (e) {}
+        var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme =
+          stored === "light" || stored === "dark" ? stored : dark ? "dark" : "light";
+      })();
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>

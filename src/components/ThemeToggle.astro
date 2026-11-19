@@ -1,0 +1,32 @@
+---
+// Hidden until the script runs, so visitors without JavaScript don't see a button that does nothing.
+---
+
+<button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false" hidden>
+  Dark theme
+</button>
+
+<script>
+  import { initThemeToggle } from "../scripts/theme";
+  initThemeToggle();
+</script>
+
+<style>
+  .theme-toggle {
+    margin-inline-start: auto;
+    font: inherit;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 999px;
+    padding: 0.25rem 0.9rem;
+    cursor: pointer;
+  }
+  .theme-toggle[aria-pressed="true"] {
+    border-color: var(--link);
+  }
+  .theme-toggle[hidden] {
+    display: none;
+  }
+</style>
