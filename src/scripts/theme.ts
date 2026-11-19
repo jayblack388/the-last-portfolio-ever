@@ -39,7 +39,7 @@ export function initThemeToggle(): void {
       ? root.dataset.theme
       : resolveTheme(readStored(), matchMedia("(prefers-color-scheme: dark)").matches);
 
-  const sync = () => button.setAttribute("aria-pressed", String(current() === "dark"));
+  const sync = () => button.setAttribute("aria-checked", String(current() === "dark"));
   root.dataset.theme = current();
   sync();
   button.hidden = false;

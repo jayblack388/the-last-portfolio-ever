@@ -4,13 +4,13 @@ test("toggle switches to dark and the choice survives a reload", async ({ page }
   await page.emulateMedia({ colorScheme: "light" });
   await page.goto("/");
   const toggle = page.locator("#theme-toggle");
-  await expect(toggle).toHaveAttribute("aria-pressed", "false");
+  await expect(toggle).toHaveAttribute("aria-checked", "false");
   await toggle.click();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
-  await expect(toggle).toHaveAttribute("aria-pressed", "true");
+  await expect(toggle).toHaveAttribute("aria-checked", "true");
   await page.reload();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
-  await expect(page.locator("#theme-toggle")).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("#theme-toggle")).toHaveAttribute("aria-checked", "true");
 });
 
 test("an unknown stored theme falls back to the system scheme without errors", async ({ page }) => {
@@ -21,6 +21,18 @@ test("an unknown stored theme falls back to the system scheme without errors", a
   await page.goto("/");
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   expect(errors).toEqual([]);
+});
+
+test("the toggle is a switch named for what it turns on, with a sun or moon icon", async ({ page }) => {
+  await page.emulateMedia({ colorScheme: "light" });
+  await page.goto("/");
+  const toggle = page.getByRole("switch", { name: "Dark theme" });
+  await expect(toggle).toBeVisible();
+  await expect(toggle.locator(".icon-sun")).toBeVisible();
+  await expect(toggle.locator(".icon-moon")).toBeHidden();
+  await toggle.click();
+  await expect(toggle.locator(".icon-moon")).toBeVisible();
+  await expect(toggle.locator(".icon-sun")).toBeHidden();
 });
 
 test("reduced motion turns off transitions", async ({ page }) => {
