@@ -1,0 +1,49 @@
+/* Brand colors from the original site. Text and link colors are darker or lighter
+   variants chosen for WCAG AA contrast; the bright blue and green are for accents only. */
+:root {
+  --blue: #08aeea;
+  --green: #2af598;
+  --primary: var(--blue);
+  --secondary: var(--green);
+  --gradient: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+
+  --bg: #fafafa;
+  --surface: #f1f8ff;
+  --text: #111111;
+  --muted: #4a5560;
+  --link: #005f82;
+  --focus: #005f82;
+  --border: #c9d3dc;
+
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --primary: var(--green);
+  --secondary: var(--blue);
+  --bg: #0d1117;
+  --surface: #1b222b;
+  --text: #f5f7fa;
+  --muted: #b8c2cc;
+  --link: #2af598;
+  --focus: #2af598;
+  --border: #3a4552;
+
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --primary: var(--green);
+    --secondary: var(--blue);
+    --bg: #0d1117;
+    --surface: #1b222b;
+    --text: #f5f7fa;
+    --muted: #b8c2cc;
+    --link: #2af598;
+    --focus: #2af598;
+    --border: #3a4552;
+
+    color-scheme: dark;
+  }
+}

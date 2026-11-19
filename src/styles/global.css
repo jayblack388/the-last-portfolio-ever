@@ -1,0 +1,95 @@
+@import "@fontsource/courier-prime/400.css";
+@import "@fontsource/courier-prime/700.css";
+@import "@fontsource-variable/biorhyme";
+@import "./tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "BioRhyme Variable", Georgia, serif;
+  line-height: 1.6;
+}
+
+/* Thin brand gradient across the top of every page. */
+body::before {
+  content: "";
+  display: block;
+  height: 0.375rem;
+  background: var(--gradient);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Courier Prime", "Courier New", monospace;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2rem, 7vw, 3rem);
+  margin: 0 0 0.75rem;
+}
+
+a {
+  color: var(--link);
+  text-underline-offset: 0.15em;
+  transition: color 150ms ease;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: min(100% - 2.5rem, 60rem);
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -10rem;
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  color: var(--text);
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.wrap-anywhere {
+  overflow-wrap: anywhere;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}

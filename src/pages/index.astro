@@ -1,0 +1,9 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../site";
+---
+
+<Base title={site.title} description={site.pitch}>
+  <h1>{site.name}</h1>
+  <p class="pitch">{site.pitch}</p>
+</Base>
