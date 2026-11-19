@@ -23,4 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-*storybook.log
+# Astro and Playwright
+.astro
+test-results
+playwright-report
+.wrangler

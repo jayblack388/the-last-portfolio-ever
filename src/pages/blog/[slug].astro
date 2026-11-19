@@ -1,0 +1,37 @@
+---
+import { render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { getPosts } from "../../lib/blog";
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const date = new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeZone: "UTC" });
+---
+
+<Base title={`${post.data.title} | John Blackwell`} description={post.data.description}>
+  <p class="crumb"><a href="/blog">All posts</a></p>
+  <article>
+    <h1>{post.data.title}</h1>
+    <p class="meta"><time datetime={post.data.pubDate.toISOString()}>{date.format(post.data.pubDate)}</time></p>
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</Base>
+
+<style>
+  .crumb {
+    margin-top: 2rem;
+  }
+  .meta {
+    color: var(--muted);
+  }
+  .prose {
+    max-width: 42rem;
+  }
+</style>

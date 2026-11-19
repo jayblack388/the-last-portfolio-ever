@@ -1,0 +1,79 @@
+# Checks every pull request and every push to main, then deploys to Cloudflare:
+# pull requests get a preview version (URL posted as a PR comment), main goes live.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  test-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Type check
+        run: npm run check
+
+      # The content guard in the unit tests scans dist/, so build first.
+      - name: Build
+        run: npm run build
+
+      - name: Unit tests
+        run: npm run test:unit
+
+      - name: Install browsers
+        run: npx playwright install --with-deps chromium firefox webkit
+
+      - name: Accessibility and page tests (Chromium, Firefox, WebKit)
+        run: npm run test:e2e
+        env:
+          E2E_BROWSERS: chromium,firefox,webkit
+
+      - name: Upload preview version
+        if: github.event_name == 'pull_request'
+        id: preview
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: versions upload
+
+      - name: Comment preview URL
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OUTPUT: ${{ steps.preview.outputs.command-output }}
+        run: |
+          url=$(printf '%s\n' "$OUTPUT" | grep -oE 'https://[a-z0-9-]+-johnblackwell-dev\.[a-z0-9-]+\.workers\.dev' | head -1)
+          if [ -n "$url" ]; then
+            gh pr comment "${{ github.event.pull_request.number }}" --body "Preview for ${GITHUB_SHA::7}: $url"
+          else
+            echo "No preview URL found in wrangler output."
+          fi
+
+      - name: Deploy
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy

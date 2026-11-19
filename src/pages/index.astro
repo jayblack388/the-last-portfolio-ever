@@ -1,0 +1,70 @@
+---
+import Contact from "../components/Contact.astro";
+import WorkCard from "../components/WorkCard.astro";
+import Base from "../layouts/Base.astro";
+import { getWork } from "../lib/work";
+import { site } from "../site";
+
+const featured = (await getWork()).filter((entry) => entry.data.featured).slice(0, 3);
+---
+
+<Base title={site.title} description={site.pitch}>
+  <section class="hero">
+    <img src="/avatar.png" alt="Photo of John Blackwell" width="160" height="160" />
+    <div>
+      <h1>{site.name}</h1>
+      <p class="pitch">{site.pitch}</p>
+      <p>{site.role} at {site.employer}, based in {site.location}.</p>
+    </div>
+  </section>
+
+  <section id="selected-work" aria-labelledby="selected-work-heading">
+    <h2 id="selected-work-heading">Selected work</h2>
+    <ul class="grid" role="list">
+      {
+        featured.map((entry) => (
+          <li>
+            <WorkCard entry={entry} />
+          </li>
+        ))
+      }
+    </ul>
+    <p><a href="/work">See all work</a></p>
+  </section>
+
+  <section aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Get in touch</h2>
+    <p>I'm glad to talk about engineering leadership, accessibility, or a project you have in mind.</p>
+    <Contact />
+  </section>
+</Base>
+
+<style>
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem 2rem;
+    margin-block: 2.5rem 1rem;
+  }
+  .hero img {
+    border-radius: 50%;
+    border: 4px solid var(--primary);
+    width: 10rem;
+    height: 10rem;
+  }
+  .hero > div {
+    flex: 1 1 18rem;
+  }
+  .pitch {
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+  }
+</style>

@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  entry: CollectionEntry<"work">;
+}
+
+const { entry } = Astro.props;
+---
+
+<article class="work-card">
+  <h3><a href={`/work/${entry.id}`}>{entry.data.title}</a></h3>
+  <p>{entry.data.summary}</p>
+</article>
+
+<style>
+  .work-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+  }
+  h3 {
+    margin: 0 0 0.5rem;
+  }
+  p {
+    margin: 0;
+  }
+</style>

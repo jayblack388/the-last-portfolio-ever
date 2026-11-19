@@ -1,0 +1,39 @@
+---
+import Contact from "../components/Contact.astro";
+import Base from "../layouts/Base.astro";
+---
+
+<Base
+  title="Working with nonprofits | John Blackwell"
+  description="Accessible, mobile-friendly websites and small tools for nonprofits, pro bono or paid."
+>
+  <h1>Working with nonprofits</h1>
+  <p class="lead">
+    Small nonprofits often run on websites and forms that are hard to use on a phone, with a screen reader,
+    or in a language other than English. I help fix that.
+  </p>
+
+  <h2>What I can help with</h2>
+  <ul>
+    <li>Finding and fixing accessibility problems, measured against WCAG 2.2 AA</li>
+    <li>Making pages and forms work on small screens</li>
+    <li>Application and sign-up forms that work in more than one language</li>
+    <li>Small tools that replace a spreadsheet or a paper process</li>
+  </ul>
+
+  <h2>How it works</h2>
+  <p>
+    <strong>Pro bono</strong> for small, volunteer-run programs without a technology budget.
+    <strong>Paid</strong> work for organizations that have a budget for it. Either way, we start with a short
+    call and a free review of your site, and you get a written list of what I found.
+  </p>
+
+  <h2>Get in touch</h2>
+  <Contact />
+</Base>
+
+<style>
+  .lead {
+    font-size: 1.15rem;
+  }
+</style>

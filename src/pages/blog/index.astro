@@ -1,0 +1,48 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getPosts } from "../../lib/blog";
+
+const posts = await getPosts();
+const date = new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeZone: "UTC" });
+---
+
+<Base title="Blog | John Blackwell" description="Notes on engineering, accessibility and tools, by John Blackwell.">
+  <h1>Blog</h1>
+  {
+    posts.length === 0 ? (
+      <p>
+        First posts are on the way. Follow along with the <a href="/rss.xml">RSS feed</a>.
+      </p>
+    ) : (
+      <>
+        <p>
+          Notes on engineering, accessibility and tools. Also available as an <a href="/rss.xml">RSS feed</a>.
+        </p>
+        <ul class="posts" role="list">
+          {posts.map((post) => (
+            <li>
+              <h2>
+                <a href={`/blog/${post.id}`}>{post.data.title}</a>
+              </h2>
+              <p class="meta">
+                <time datetime={post.data.pubDate.toISOString()}>{date.format(post.data.pubDate)}</time>
+              </p>
+              <p>{post.data.description}</p>
+            </li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+</Base>
+
+<style>
+  .posts {
+    list-style: none;
+    padding: 0;
+  }
+  .meta {
+    color: var(--muted);
+    margin: 0;
+  }
+</style>

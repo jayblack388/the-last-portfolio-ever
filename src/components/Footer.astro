@@ -1,0 +1,30 @@
+---
+import { site } from "../site";
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <ul>
+      <li><a class="wrap-anywhere" href={`mailto:${site.email}`}>{site.email}</a></li>
+      <li><a href={site.github}>GitHub</a></li>
+      <li><a href={site.linkedin}>LinkedIn</a></li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: 4rem;
+    border-top: 1px solid var(--border);
+    padding-block: 1.5rem;
+    color: var(--muted);
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+</style>

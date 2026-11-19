@@ -1,0 +1,69 @@
+---
+// The sun/moon switch from the original site, rebuilt as an accessible switch.
+// Hidden until the script runs, so visitors without JavaScript don't see a control that does nothing.
+---
+
+<button type="button" id="theme-toggle" class="theme-toggle" role="switch" aria-checked="false" aria-label="Dark theme" hidden>
+  <span class="knob">
+    <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+      <path fill="#FFCE31" d="M5.12 16.8l-1.6 3.72 3.72-1.6a8 8 0 0 1-2.12-2.12zM18.88 7.2l1.6-3.72-3.68 1.6a8 8 0 0 1 2.08 2.12zM3.76 10.52L0 12l3.76 1.48a8.4 8.4 0 0 1 0-2.96zM20.24 13.48L24 12l-3.76-1.48a8.4 8.4 0 0 1 0 2.96zM7.2 5.12L3.48 3.52l1.6 3.72A8 8 0 0 1 7.2 5.12zM16.8 18.88l3.72 1.6-1.6-3.72a8 8 0 0 1-2.12 2.12zM13.48 3.76L12 0l-1.48 3.76a8.4 8.4 0 0 1 2.96 0zM10.52 20.24L12 24l1.48-3.76a8.4 8.4 0 0 1-2.96 0zM12 19.6a7.6 7.6 0 1 0 0-15.2 7.6 7.6 0 0 0 0 15.2z"></path>
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+      <path fill="#F5DB8A" d="M16.44 0a12 12 0 0 1 2.04 6.72c.04 6.68-5.44 12.08-12.2 12.08A12.6 12.6 0 0 1 0 17.08 11.4 11.4 0 0 0 11.32 24C18.32 24 24 18.4 24 11.48 24 6.36 20.88 1.96 16.44 0z"></path>
+    </svg>
+  </span>
+</button>
+
+<script>
+  import { initThemeToggle } from "../scripts/theme";
+  initThemeToggle();
+</script>
+
+<style>
+  .theme-toggle {
+    --track-width: 4.5rem;
+    --knob-size: 1.75rem;
+    position: relative;
+    flex: none;
+    margin-inline-start: auto;
+    width: var(--track-width);
+    height: 2.25rem;
+    padding: 0;
+    border: 2px solid var(--muted);
+    border-radius: 999px;
+    background: var(--surface);
+    cursor: pointer;
+    transition: background-color 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .theme-toggle[hidden] {
+    display: none;
+  }
+  .knob {
+    position: absolute;
+    top: 50%;
+    left: 0.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--knob-size);
+    height: var(--knob-size);
+    border-radius: 50%;
+    background: #24292e;
+    transform: translateY(-50%);
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.2s ease;
+  }
+  .theme-toggle[aria-checked="true"] .knob {
+    background: #f1f8ff;
+    transform: translate(calc(var(--track-width) - var(--knob-size) - 0.5rem), -50%);
+  }
+  .theme-toggle:hover .knob {
+    box-shadow: 0 0 0 4px var(--primary);
+  }
+  .icon-moon,
+  .theme-toggle[aria-checked="true"] .icon-sun {
+    display: none;
+  }
+  .theme-toggle[aria-checked="true"] .icon-moon {
+    display: block;
+  }
+</style>
