@@ -9,3 +9,8 @@ test("a draft work entry is not listed", async ({ page }) => {
   await page.goto("/work");
   await expect(page.locator("main")).not.toContainText("Draft fixture");
 });
+
+test("a draft blog post has no page", async ({ request }) => {
+  const res = await request.get("/blog/example-draft");
+  expect(res.status()).toBe(404);
+});

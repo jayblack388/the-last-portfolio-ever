@@ -7,4 +7,6 @@ export const PAGES: string[] = [
   "/work/claude-plugins",
   "/about",
   "/nonprofits",
+  "/blog",
+  "/404",
 ];
