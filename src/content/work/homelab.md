@@ -17,4 +17,4 @@ My homelab runs on one Raspberry Pi. It started as a place to try monitoring too
 
 ## What I learned
 
-Running everything on one small machine forces discipline. In August 2026 the Pi's USB storage controller crashed, and Docker kept running against a stale copy of its data for four days before I noticed. Writing up what went wrong produced a hardening plan, a backup strategy and a restart runbook, and every service now has a health check and a resource limit.
+Running everything on one small machine forces discipline. In August 2026 the Pi's USB storage controller crashed, and Docker kept running against a stale copy of its data for four days before I noticed. Writing up what went wrong produced a hardening plan, a backup strategy and a restart runbook, and a written standard that every service needs a health check and a resource limit.

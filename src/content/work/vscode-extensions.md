@@ -1,6 +1,6 @@
 ---
 title: Markdown tools for VS Code and its forks
-summary: Seven extensions that make the Markdown preview in VS Code, Cursor and VSCodium more useful, with about 14,700 downloads on Open VSX.
+summary: Seven extensions that make the Markdown preview in VS Code, Cursor and VSCodium more useful, with about 14,800 downloads on Open VSX.
 order: 1
 featured: true
 links:

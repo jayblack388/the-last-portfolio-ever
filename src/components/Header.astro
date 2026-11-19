@@ -1,4 +1,5 @@
 ---
+import { cleanPath, navCurrent } from "../lib/paths";
 import { site } from "../site";
 import ThemeToggle from "./ThemeToggle.astro";
 
@@ -8,7 +9,7 @@ const nav = [
   { href: "/nonprofits", label: "Nonprofits" },
   { href: "/about", label: "About" },
 ];
-const current = Astro.url.pathname;
+const current = cleanPath(Astro.url.pathname);
 ---
 
 <header class="site-header">
@@ -19,7 +20,7 @@ const current = Astro.url.pathname;
         {
           nav.map((item) => (
             <li>
-              <a href={item.href} aria-current={current.startsWith(item.href) ? "page" : undefined}>
+              <a href={item.href} aria-current={navCurrent(current, item.href)}>
                 {item.label}
               </a>
             </li>
