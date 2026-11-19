@@ -3,6 +3,13 @@
   "name": "johnblackwell-dev",
   "main": "worker/index.ts",
   "compatibility_date": "2026-11-01",
+  // The site lives on the custom domains; workers.dev stays off, but PR preview URLs stay on.
+  "workers_dev": false,
+  "preview_urls": true,
+  "routes": [
+    { "pattern": "www.johnblackwell.dev", "custom_domain": true },
+    { "pattern": "johnblackwell.dev", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
