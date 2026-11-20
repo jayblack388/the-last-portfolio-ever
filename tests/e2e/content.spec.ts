@@ -19,11 +19,23 @@ test.describe("page content without JavaScript", () => {
     await expect(page.locator("main")).toContainText("Hometap");
   });
 
-  test("nonprofits offers pro bono and paid work", async ({ page }) => {
-    await page.goto("/nonprofits");
-    const text = (await page.locator("main").innerText()).toLowerCase();
-    expect(text).toContain("pro bono");
-    expect(text).toContain("paid");
+  test("consulting covers AI, full stack and frontend work", async ({ page }) => {
+    await page.goto("/consulting");
+    await expect(page.locator("h1")).toHaveText("Consulting");
+    const headings = (await page.locator("main h2, main h3").allInnerTexts()).join(" | ").toLowerCase();
+    expect(headings).toContain("ai");
+    expect(headings).toContain("full stack");
+    expect(headings).toContain("frontend");
+    await expect(page.locator('main a[href^="mailto:"]')).toHaveCount(1);
+  });
+
+  test("consulting has a community section with reduced or waived rates", async ({ page }) => {
+    await page.goto("/consulting");
+    const section = page.locator("#community");
+    await expect(section.locator("h2")).toContainText(/nonprofits/i);
+    const text = (await section.innerText()).toLowerCase();
+    expect(text).toContain("reduced");
+    expect(text).toContain("waived");
   });
 });
 

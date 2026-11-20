@@ -6,7 +6,7 @@ export const PAGES: string[] = [
   "/work/homelab",
   "/work/claude-plugins",
   "/about",
-  "/nonprofits",
+  "/consulting",
   "/blog",
   "/404",
 ];
