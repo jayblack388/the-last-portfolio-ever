@@ -15,6 +15,17 @@ describe("worker", () => {
     expect(r.headers.get("location")).toBe("https://www.johnblackwell.dev/");
   });
 
+  it("sends the old nonprofits page to the consulting page's community section", async () => {
+    const r = await worker.fetch(new Request("https://www.johnblackwell.dev/nonprofits"), env());
+    expect(r.status).toBe(301);
+    expect(r.headers.get("location")).toBe("https://www.johnblackwell.dev/consulting#community");
+  });
+
+  it("redirects the old nonprofits page on the bare domain in one hop", async () => {
+    const r = await worker.fetch(new Request("https://johnblackwell.dev/nonprofits.html"), env());
+    expect(r.headers.get("location")).toBe("https://www.johnblackwell.dev/consulting#community");
+  });
+
   it("serves assets on www", async () => {
     const e = env();
     const r = await worker.fetch(new Request("https://www.johnblackwell.dev/about"), e);

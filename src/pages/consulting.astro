@@ -1,0 +1,85 @@
+---
+import Contact from "../components/Contact.astro";
+import Base from "../layouts/Base.astro";
+
+const services = [
+  {
+    title: "AI and LLM features",
+    body: "Adding Claude or another model to a product: prompt design, structured outputs your code can trust, checks on the results, and workflows that retry and recover when a call fails. I also set up coding agents for teams, with shared skills, hooks and project memory.",
+  },
+  {
+    title: "Full stack applications",
+    body: "APIs and the apps around them, in TypeScript and Node, Python and Django, or Ruby on Rails, on PostgreSQL. From a first version to something your team can keep running.",
+  },
+  {
+    title: "Frontend and accessibility",
+    body: "React apps and component libraries, accessibility reviews and fixes measured against WCAG 2.2 AA, and pages that work on a small phone or with a screen reader.",
+  },
+  {
+    title: "Planning and second opinions",
+    body: "Architecture reviews, technical plans and estimates, code review, and mentoring for a team that's growing.",
+  },
+];
+---
+
+<Base
+  title="Consulting | John Blackwell"
+  description="Consulting on AI features, full stack applications, frontend and accessibility, with reduced or waived rates for nonprofits and community groups."
+>
+  <h1>Consulting</h1>
+  <p class="lead">
+    I take on a small number of projects alongside my full-time role: AI features, full stack builds, and
+    frontend work that holds up on any device.
+  </p>
+
+  <h2>What I can help with</h2>
+  {
+    services.map((s) => (
+      <section>
+        <h3>{s.title}</h3>
+        <p>{s.body}</p>
+      </section>
+    ))
+  }
+
+  <h2>How it works</h2>
+  <p>
+    We start with a short call about what you need. If it's a good fit, I send a written scope with a
+    timeline and an estimate before any work starts.
+  </p>
+
+  <section id="community" aria-labelledby="community-heading" class="callout">
+    <h2 id="community-heading">Nonprofits and community groups</h2>
+    <p>
+      If you run a nonprofit, a local community group or a volunteer-run program, I offer reduced rates,
+      and for small groups without a technology budget the fee can be waived entirely. Typical projects:
+    </p>
+    <ul>
+      <li>Websites and forms that work on phones, with screen readers, and in more than one language</li>
+      <li>Small tools that replace a spreadsheet or a paper process</li>
+      <li>A review of your current site with a written list of what to fix first</li>
+    </ul>
+  </section>
+
+  <h2>Get in touch</h2>
+  <Contact />
+</Base>
+
+<style>
+  .lead {
+    font-size: 1.15rem;
+  }
+  h3 {
+    margin-block-end: 0.25rem;
+  }
+  h3 + p {
+    margin-block-start: 0;
+  }
+  .callout {
+    margin-block: 2rem;
+    padding: 0.25rem 1.25rem 0.5rem;
+    border-inline-start: 4px solid var(--primary);
+    background: var(--surface);
+    border-radius: 0.25rem;
+  }
+</style>
